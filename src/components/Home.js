@@ -5,10 +5,6 @@ import { projects } from "../data/projects";
 import githubLogo from "../icon/github.svg";
 import linkedInLogo from "../icon/linkedin.svg";
 import youtubeLogo from "../icon/youtube.svg";
-import starIcon from "../icon/star.svg";
-import linkIcon from "../icon/link.svg";
-import video1 from "../image/validemailpwvid.webp";
-import video2 from "../image/walkthruvid.webp";
 
 console.log(projects);
 
@@ -125,7 +121,7 @@ export default function Home() {
                </div>
                {/* <!-- components --> */}
                {projects.map((project) => {
-                  return <Project project={project} />;
+                  return <Project project={project} key={project.id} />;
                })}
 
                {/* <!----> */}
