@@ -124,7 +124,10 @@ export default function Home() {
                   </div>
                </div>
                {/* <!-- components --> */}
-               <Project />
+               {projects.map((project) => {
+                  return <Project project={project} />;
+               })}
+
                {/* <!----> */}
             </div>
          </div>
