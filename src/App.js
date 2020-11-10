@@ -154,30 +154,10 @@ function App() {
                         className="text-decoration-none text-reset"
                      >
                         <p>
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
                            <span className="text-decoration-none ml-2">
                               Validation of email and password fields in White
                               Bear, following best security and UX practices.
@@ -234,36 +214,11 @@ function App() {
                         className="text-decoration-none text-reset"
                      >
                         <p>
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
-                           <img
-                              src={starIcon}
-                              width="16px"
-                              alt="star"
-                              className="mr-n1"
-                           />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
+                           <img src={starIcon} width="16px" alt="star" />
                            <span className="text-decoration-none ml-2">
                               Prototype of Suite Project, an app that makes
                               finding accommodation easier. (4:56 min.)

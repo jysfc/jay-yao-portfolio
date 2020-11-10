@@ -1,0 +1,6 @@
+// Only add responsiveness to the page title (your name)
+.title {
+   @include media-breakpoint-down(xs) {
+      font-size: 48px;
+   }
+}
