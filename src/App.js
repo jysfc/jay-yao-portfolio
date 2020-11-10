@@ -9,7 +9,10 @@ function App() {
    return (
       <>
          <h1 className="text-danger">Hello world again</h1>
-         <Project />
+
+         {projects.map((project) => {
+            return <Project project={project} key={project.id} />;
+         })}
       </>
    );
 }

@@ -1,9 +1,12 @@
 import React from "react";
 
-function Project() {
+function Project(props) {
+   console.log(props);
    return (
       <>
-         <h2 className="text-primary">This is a project</h2>
+         <h4 className="text-primary">
+            {props.project.title} ({props.project.rating}){" "}
+         </h4>
       </>
    );
 }
