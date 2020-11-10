@@ -2,6 +2,13 @@ import React from "react";
 import "./style/master.scss";
 import Project from "./components/Project";
 import { projects } from "./data/projects";
+import githubLogo from "./icon/github.svg";
+import linkedInLogo from "./icon/linkedin.svg";
+import youtubeLogo from "./icon/youtube.svg";
+import starIcon from "./icon/star.svg";
+import linkIcon from "./icon/link.svg";
+import video1 from "./image/validemailpwvid.webp";
+import video2 from "./image/walkthruvid.webp";
 
 console.log(projects);
 
@@ -24,7 +31,7 @@ function App() {
                      type="button"
                   >
                      <img
-                        src="/icon/github.svg"
+                        src={githubLogo}
                         width="24px"
                         alt="github logo"
                         className="ml-4 mt-n1"
@@ -37,7 +44,7 @@ function App() {
                      type="button"
                   >
                      <img
-                        src="/icon/linkedin.svg"
+                        src={linkedInLogo}
                         width="24 px"
                         alt="linkedin logo"
                         className="ml-4 mt-n1"
@@ -50,7 +57,7 @@ function App() {
                      type="button"
                   >
                      <img
-                        src="/icon/youtube.svg"
+                        src={youtubeLogo}
                         width="28px"
                         alt="youtube logo"
                         className="ml-4 mt-1"
@@ -134,7 +141,7 @@ function App() {
                         className="text-dark text-reset"
                      >
                         <img
-                           src="/images/validemailpwvid.webp"
+                           src={video1}
                            className="img-fluid"
                            width="510px"
                            alt="validemailpwvid"
@@ -148,25 +155,25 @@ function App() {
                      >
                         <p>
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
@@ -186,7 +193,7 @@ function App() {
                         className="text-decoration-none d-inline-block"
                      >
                         <img
-                           src="/icon/link.svg"
+                           src={linkIcon}
                            width="16px"
                            alt="link"
                            className="mr-2"
@@ -214,7 +221,7 @@ function App() {
                         className="text-dark text-reset"
                      >
                         <img
-                           src="/images/walkthruvid.webp"
+                           src={video2}
                            className="img-fluid"
                            width="510px"
                            alt="walkthroughvid"
@@ -228,31 +235,31 @@ function App() {
                      >
                         <p>
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
                            />
                            <img
-                              src="/icon/star.svg"
+                              src={starIcon}
                               width="16px"
                               alt="star"
                               className="mr-n1"
@@ -271,7 +278,7 @@ function App() {
                         className="text-decoration-none d-inline-block"
                      >
                         <img
-                           src="/icon/link.svg"
+                           src={linkIcon}
                            width="16px"
                            alt="link"
                            className="mr-2"
