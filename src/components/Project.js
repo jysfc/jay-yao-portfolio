@@ -1,9 +1,11 @@
 import React from "react";
 import starIcon from "../icon/star.svg";
 import linkIcon from "../icon/link.svg";
+import { truncate } from "../utils/helpers";
 
-function Project(props) {
+export default function Project(props) {
    console.log("The props we passed from the parent component: ", props);
+   console.log(require("../image/" + props.project.image).default);
    return (
       <div className="row mb-5">
          <div className="col-12 mb-2">
@@ -14,10 +16,10 @@ function Project(props) {
          <div className="col-12 col-md-4">
             <a href={props.project.youtubeUrl} className="text-dark text-reset">
                <img
-                  src={require("../image/" + props.project.image)}
+                  src={require("../image/" + props.project.image).default}
                   className="img-fluid"
                   width="510px"
-                  alt="Validation of Email and Password on Account Creation"
+                  alt={props.project.title}
                />
             </a>
          </div>
@@ -39,16 +41,11 @@ function Project(props) {
                   {props.project.postedAt}
                </p>
             </a>
-            <a
-               href={props.project.githubUrl}
-               className="text-decoration-none d-inline-block"
-            >
+            <a href={props.project.githubUrl}>
                <img src={linkIcon} width="16px" alt="link" className="mr-2" />
-               {props.project.githubUrl}
+               {truncate(props.project.githubUrl, 33)}
             </a>
          </div>
       </div>
    );
 }
-
-export default Project;
