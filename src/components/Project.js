@@ -2,10 +2,22 @@ import React from "react";
 import starIcon from "../icon/star.svg";
 import linkIcon from "../icon/link.svg";
 import { truncate } from "../utils/helpers";
+import format from "date-fns/format";
 
 export default function Project(props) {
-   console.log("The props we passed from the parent component: ", props);
-   console.log(require("../image/" + props.project.image).default);
+const rating = props.project.rating;
+fuction displayStars() {
+   let stars = []
+ for (let i = 0; i < rating; i++){  
+    stars = stars.concat(
+    <img src={starIcon} width="16px" alt="star" key={i} />);
+    };
+ }
+ return stars;
+}
+
+   // console.log("The props we passed from the parent component: ", props);
+   
    return (
       <div className="row mb-5">
          <div className="col-12 mb-2">
@@ -29,16 +41,13 @@ export default function Project(props) {
                className="text-decoration-none text-reset"
             >
                <p>
-                  <img src={starIcon} width="16px" alt="star" />
-                  <img src={starIcon} width="16px" alt="star" />
-                  <img src={starIcon} width="16px" alt="star" />
-                  <img src={starIcon} width="16px" alt="star" />
+                  {displayStars()}
                   <span className="text-decoration-none ml-2">
                      {props.project.desc} ({props.project.totalMinutes} min.)
                   </span>
                </p>
                <p className="text-decoration-none my-3">
-                  {props.project.postedAt}
+                  {format(props.project.postedAt, "MMM. d, yyyy")}
                </p>
             </a>
             <a href={props.project.githubUrl}>
@@ -48,4 +57,4 @@ export default function Project(props) {
          </div>
       </div>
    );
-}
+
