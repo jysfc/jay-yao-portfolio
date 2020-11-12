@@ -11,15 +11,34 @@ export default class Home extends React.Component {
       super(props);
       const activeProjects = projects.filter((project) => {
          return project.isActive;
-      });
+      }); // imagine we are returning the filtered results froma API
       this.state = {
+         activeProjects: activeProjects,
          isAdvanced: false,
-         projects: activeProjects,
+         displayedProjects: activeProjects,
+         searchInput: "",
       };
    }
 
    setIsAdvanced() {
       this.setState({ isAdvanced: !this.state.isAdvanced });
+   }
+   setSearchInput(e) {
+      const searchInput = e.target.value;
+      this.setState((prevState) => {
+         return {
+            searchInput: searchInput,
+            displayedProjects: prevState.activeProjects.filter((project) => {
+               const lowerCasedInput = searchInput.toLowerCase();
+               const projectTitle = project.title.toLowerCase();
+               const projectDesc = project.desc.toLowerCase();
+               return (
+                  projectTitle.includes(lowerCasedInput) ||
+                  projectDesc.includes(lowerCasedInput)
+               );
+            }),
+         };
+      });
    }
 
    render() {
@@ -36,6 +55,10 @@ export default class Home extends React.Component {
                            className="form-control"
                            id="search-projects"
                            placeholder="Search projects"
+                           value={this.state.searchInput}
+                           onChange={(e) => {
+                              this.setSearchInput(e);
+                           }}
                         />
                      </div>
                      <div className="col-12 col-sm-4">
@@ -92,7 +115,7 @@ export default class Home extends React.Component {
                      </div>
                   </div>
                   {/* <!-- components --> */}
-                  {this.state.projects.map((project) => {
+                  {this.state.displayedProjects.map((project) => {
                      return (
                         <Project
                            project={project}
