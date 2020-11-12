@@ -8,8 +8,8 @@ import getCssClasses from "classnames";
 export default class Project extends React.Component {
    // Project.render()
 
-   constructor() {
-      super(); // allow access to this.
+   constructor(props) {
+      super(props); // allow access to this.
       this.state = {
          //local state
          isHoveredOver: false,
