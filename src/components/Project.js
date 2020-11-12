@@ -15,39 +15,52 @@ export default class Project extends React.Component {
       };
    }
 
-   displayUnderline() {
-      //TODO: change to setUnderline...
-      console.log("Ok, let's display the underline");
+   setIsHoveredOver(isHoveredOver) {
+      this.setState({ isHoveredOver: isHoveredOver });
+   }
+
+   displayStars() {
+      const rating = this.props.project.rating;
+      let stars = [];
+      for (let i = 0; i < rating; i++) {
+         stars = stars.concat(
+            <img src={starIcon} width="16px" alt="star" key={i} />
+         );
+      }
+      return stars;
    }
 
    render() {
-      const rating = this.props.project.rating;
-      function displayStars() {
-         let stars = [];
-         for (let i = 0; i < rating; i++) {
-            stars = stars.concat(
-               <img src={starIcon} width="16px" alt="star" key={i} />
-            );
-         }
-         return stars;
-      }
       return (
          <div className="row mb-5">
-            <div className="col-12 mb-2">
+            <div
+               className="col-12 mb-2"
+               onMouseEnter={() => {
+                  this.setIsHoveredOver(true);
+               }}
+               onMouseLeave={() => {
+                  this.setIsHoveredOver(false);
+               }}
+            >
                <a
                   href={this.props.project.youtubeUrl}
-                  className="text-dark text-reset"
+                  className="text-dark text-reset text-decoration-none"
                >
                   <h3 className="font-weight-normal">
                      {this.props.project.title}
                   </h3>
                </a>
             </div>
-            <div className="col-12 col-md-4">
-               <a
-                  href={this.props.project.youtubeUrl}
-                  className="text-dark text-reset"
-               >
+            <div
+               className="col-12 col-md-4"
+               onMouseEnter={() => {
+                  this.setIsHoveredOver(true);
+               }}
+               onMouseLeave={() => {
+                  this.setIsHoveredOver(false);
+               }}
+            >
+               <a href={this.props.project.youtubeUrl}>
                   <img
                      src={
                         require("../image/" + this.props.project.image).default
@@ -62,9 +75,15 @@ export default class Project extends React.Component {
                <a
                   href={this.props.project.youtubeUrl}
                   className="text-decoration-none text-reset"
+                  onMouseEnter={() => {
+                     this.setIsHoveredOver(true);
+                  }}
+                  onMouseLeave={() => {
+                     this.setIsHoveredOver(false);
+                  }}
                >
                   <p>
-                     {displayStars()}
+                     {this.displayStars()}
                      <span className="text-decoration-none ml-2">
                         {this.props.project.desc} (
                         {this.props.project.totalMinutes} min.)
