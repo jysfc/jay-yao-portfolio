@@ -3,6 +3,7 @@ import starIcon from "../icon/star.svg";
 import linkIcon from "../icon/link.svg";
 import { truncate } from "../utils/helpers";
 import format from "date-fns/format";
+import getCssClasses from "classnames";
 
 export default class Project extends React.Component {
    // Project.render()
@@ -44,7 +45,9 @@ export default class Project extends React.Component {
             >
                <a
                   href={this.props.project.youtubeUrl}
-                  className="text-dark text-reset text-decoration-none"
+                  className={getCssClasses("text-reset text-decoration-none", {
+                     "text-underline": this.state.isHoveredOver,
+                  })}
                >
                   <h3 className="font-weight-normal">
                      {this.props.project.title}
@@ -74,7 +77,7 @@ export default class Project extends React.Component {
             <div className="col-12 col-md-8 mt-3 mt-md-n1">
                <a
                   href={this.props.project.youtubeUrl}
-                  className="text-decoration-none text-reset"
+                  className="text-reset text-decoration-none"
                   onMouseEnter={() => {
                      this.setIsHoveredOver(true);
                   }}
