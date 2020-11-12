@@ -17,7 +17,7 @@ export default class Project extends React.Component {
    }
 
    setIsHoveredOver(isHoveredOver) {
-      this.setState({ isHoveredOver: isHoveredOver });
+      this.setState({ isHoveredOver });
    }
 
    displayStars() {
@@ -96,15 +96,17 @@ export default class Project extends React.Component {
                      {format(this.props.project.postedAt, "MMM. d, yyyy")}
                   </p>
                </a>
-               <a href={this.props.project.githubUrl}>
-                  <img
-                     src={linkIcon}
-                     width="16px"
-                     alt="link"
-                     className="mr-2"
-                  />
-                  {truncate(this.props.project.githubUrl, 33)}
-               </a>
+               {this.props.isAdvanced && (
+                  <a href={this.props.project.githubUrl}>
+                     <img
+                        src={linkIcon}
+                        width="16px"
+                        alt="link"
+                        className="mr-2"
+                     />
+                     {truncate(this.props.project.githubUrl, 33)}
+                  </a>
+               )}
             </div>
          </div>
       );
