@@ -5,19 +5,16 @@ import { truncate } from "../utils/helpers";
 import format from "date-fns/format";
 
 export default function Project(props) {
-const rating = props.project.rating;
-fuction displayStars() {
-   let stars = []
- for (let i = 0; i < rating; i++){  
-    stars = stars.concat(
-    <img src={starIcon} width="16px" alt="star" key={i} />);
-    };
- }
- return stars;
-}
-
-   // console.log("The props we passed from the parent component: ", props);
-   
+   const rating = props.project.rating;
+   function displayStars() {
+      let stars = [];
+      for (let i = 0; i < rating; i++) {
+         stars = stars.concat(
+            <img src={starIcon} width="16px" alt="star" key={i} />
+         );
+      }
+      return stars;
+   }
    return (
       <div className="row mb-5">
          <div className="col-12 mb-2">
@@ -57,4 +54,4 @@ fuction displayStars() {
          </div>
       </div>
    );
-
+}
