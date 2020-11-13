@@ -43,6 +43,7 @@ export default class Home extends React.Component {
    }
 
    setProjectOrder(e) {
+      console.log(e.target.value);
       this.setState({ projectOrder: e.target.value });
    }
 
@@ -94,7 +95,7 @@ export default class Home extends React.Component {
                               type="radio"
                               id="most-recent"
                               name="project-order"
-                              value="most=recent"
+                              value="most-recent"
                               checked={
                                  this.state.projectOrder === "most recent"
                               }
