@@ -4,6 +4,7 @@ import Project from "./Project";
 import { projects } from "../data/projects";
 import Bio from "./Bio";
 import orderBy from "lodash/orderBy";
+import { safelyParseJson } from "../utils/helpers";
 
 console.log(projects);
 
@@ -14,7 +15,7 @@ export default class Home extends React.Component {
          return project.isActive;
       }); // imagine we are returning the filtered results from a API
       const defaultOrder = '["postedAt", "desc"]';
-      const params = JSON.parse(defaultOrder);
+      const params = safelyParseJson(defaultOrder);
       const orderedProjects = orderBy(activeProjects, ...params);
       this.state = {
          activeProjects: orderedProjects,
@@ -25,9 +26,21 @@ export default class Home extends React.Component {
       };
    }
 
-   setIsAdvanced() {
-      this.setState({ isAdvanced: !this.state.isAdvanced });
+   updateState(e) {
+      let value = e.target.value;
+      if (value === "true" || value === "false") {
+         value = safelyParseJson(value); // "true" will be into true str to boolean
+      }
+      // eslint-disable-next-line
+      if (value == Number(value)) {
+         value = safelyParseJson(value); // "4" will turn into 4 str to num
+      }
+      this.setState({ [e.target.name]: value }); // set state based off target name
+      // const partialState = {};
+      // partialState[key] = value;
+      // this.setState(partialState);
    }
+
    setSearchInput(e) {
       const searchInput = e.target.value;
       this.setState((prevState) => {
@@ -48,7 +61,7 @@ export default class Home extends React.Component {
 
    setProjectOrder(e) {
       const projectOrder = e.target.value;
-      const params = JSON.parse(projectOrder);
+      const params = safelyParseJson(projectOrder);
       this.setState((prevState) => {
          return {
             projectOrder: projectOrder,
@@ -82,15 +95,15 @@ export default class Home extends React.Component {
                            <input
                               type="checkbox"
                               className="custom-control-input"
-                              id="advanced-view"
+                              id="isAdvanced" //for htmlFor
                               checked={this.state.isAdvanced}
-                              onChange={() => {
-                                 this.setIsAdvanced();
-                              }}
+                              name="isAdvanced"
+                              value={!this.state.isAdvanced}
+                              onChange={(e) => this.updateState(e)}
                            />
                            <label
                               className="custom-control-label"
-                              htmlFor="advanced-view"
+                              htmlFor="isAdvanced"
                            >
                               Advanced view
                            </label>

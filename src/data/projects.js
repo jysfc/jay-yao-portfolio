@@ -16,7 +16,7 @@ export const projects = [
    {
       id: `12f964a6-b421-49e0-8a58-5d3b9b290a0a`,
       title: `Walkthrough of Suite Project Prototype`,
-      rating: 5,
+      rating: 3,
       desc: `Prototype of Suite Project, an app that makes finding
          accommodation easier.`,
       totalMinutes: 4,
