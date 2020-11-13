@@ -11,7 +11,7 @@ export default class Home extends React.Component {
       super(props);
       const activeProjects = projects.filter((project) => {
          return project.isActive;
-      }); // imagine we are returning the filtered results froma API
+      }); // imagine we are returning the filtered results from a API
       this.state = {
          activeProjects: activeProjects,
          isAdvanced: false,
@@ -95,7 +95,7 @@ export default class Home extends React.Component {
                               type="radio"
                               id="most-recent"
                               name="project-order"
-                              value="most-recent"
+                              value="most recent"
                               checked={
                                  this.state.projectOrder === "most recent"
                               }
@@ -116,7 +116,7 @@ export default class Home extends React.Component {
                               type="radio"
                               id="most-popular"
                               name="project-order"
-                              value="most-popular"
+                              value="most popular"
                               checked={
                                  this.state.projectOrder === "most popular"
                               }
