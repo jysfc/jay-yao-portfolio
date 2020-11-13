@@ -17,6 +17,7 @@ export default class Home extends React.Component {
          isAdvanced: false,
          displayedProjects: activeProjects,
          searchInput: "",
+         projectOrder: "most recent",
       };
    }
 
@@ -39,6 +40,10 @@ export default class Home extends React.Component {
             }),
          };
       });
+   }
+
+   setProjectOrder(e) {
+      this.setState({ projectOrder: e.target.value });
    }
 
    render() {
@@ -88,7 +93,14 @@ export default class Home extends React.Component {
                            <input
                               type="radio"
                               id="most-recent"
-                              name="order-projects"
+                              name="project-order"
+                              value="most=recent"
+                              checked={
+                                 this.state.projectOrder === "most recent"
+                              }
+                              onChange={(e) => {
+                                 this.setProjectOrder(e);
+                              }}
                               className="custom-control-input"
                            />
                            <label
@@ -102,7 +114,14 @@ export default class Home extends React.Component {
                            <input
                               type="radio"
                               id="most-popular"
-                              name="order-projects"
+                              name="project-order"
+                              value="most-popular"
+                              checked={
+                                 this.state.projectOrder === "most popular"
+                              }
+                              onChange={(e) => {
+                                 this.setProjectOrder(e);
+                              }}
                               className="custom-control-input"
                            />
                            <label

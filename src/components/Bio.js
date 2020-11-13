@@ -18,6 +18,8 @@ export default function Bio() {
                href="https://github.com/jysfc"
                className="text-decoration-none d-inline-block"
                type="button"
+               target="_blank"
+               rel="noopener noreferrer"
             >
                <img
                   src={githubLogo}
@@ -31,6 +33,8 @@ export default function Bio() {
                href="https://linkedin.com/in/j-yao"
                className="text-decoration-none d-inline-block"
                type="button"
+               target="_blank"
+               rel="noopener noreferrer"
             >
                <img
                   src={linkedInLogo}
@@ -44,6 +48,8 @@ export default function Bio() {
                href="https://www.youtube.com/channel/UCfebDXylKdoFQnzOIqGgp5A"
                className="text-decoration-none d-inline-block"
                type="button"
+               target="_blank"
+               rel="noopener noreferrer"
             >
                <img
                   src={youtubeLogo}
